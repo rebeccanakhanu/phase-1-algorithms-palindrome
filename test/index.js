@@ -1,7 +1,14 @@
-const chai = require("chai");
-global.expect = chai.expect;
-const isPalindrome = require("../index");
+//chai is an assertion library for node.js and provides a way of writing clear assertions
+// the chai library is an assertion library for Node.js and provides a way of writing clearer assertions in tets
+const chai = require('chai');
+const expect = chai.expect;
 
+function isPalindrome(str) {
+  const reversedStr = str.split("").reverse().join("");
+  return str === reversedStr;
+}
+
+// test cases
 describe("isPalindrome", () => {
   it("returns true for 'abba'", () => {
     expect(isPalindrome("abba")).to.be.true;
